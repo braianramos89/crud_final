@@ -12,7 +12,7 @@
     <body>
 
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        <form action="${pageContext.request.contextPath}/servletControlador?accion=modificar&idproducto=${libro.idproducto}" method="POST" class="was-validated">
+        <form action="${pageContext.request.contextPath}/servletControlador?accion=modificar&idproducto=${producto.idproducto}" method="POST" class="was-validated">
             <jsp:include page="/WEB-INF/paginas/comunes/botonesNavEdicion.jsp"/>
 
             <section id="details">
@@ -26,23 +26,23 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="producto">Producto</label>
-                                        <input type="text" class="form-control" name="producto" required="" value="${libro.producto}">
+                                        <input type="text" class="form-control" name="producto" required="" value="${producto.producto}">
                                     </div>
                                     <div class="form-group">
                                         <label for="marca">Marca</label>
-                                        <input type="text" class="form-control" name="marca" value="${libro.marca}">
+                                        <input type="text" class="form-control" name="marca" value="${producto.marca}">
                                     </div>
                                     <div class="form-group">
                                         <label for="vidaUtil">Vida Util</label>
-                                        <input type="number" class="form-control" name="vidaUtil" required="" value="${libro.vidaUtil}">
+                                        <input type="number" class="form-control" name="vidaUtil" required="" value="${producto.vidaUtil}">
                                     </div>
                                     <div class="form-group">
                                         <label for="precio">Valor</label>
-                                        <input type="currency" class="form-control" name="precio" required="" value="${libro.precio}">
+                                        <input type="currency" class="form-control" name="precio" required="" value="${producto.precio}">
                                     </div>
                                     <div class="form-group">
                                         <label for="copias">Cantidad</label>
-                                        <input type="number" class="form-control" name="copias" required="" value="${libro.copias}">
+                                        <input type="number" class="form-control" name="copias" required="" value="${producto.copias}">
                                     </div>
                                 </div>
                             </div>
