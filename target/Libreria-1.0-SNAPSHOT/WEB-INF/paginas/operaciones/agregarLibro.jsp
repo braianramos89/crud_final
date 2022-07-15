@@ -8,16 +8,16 @@
             <form action="${pageContext.request.contextPath}/servletControlador?accion=insertar" method="POST" class="was-validated">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="nombre">Producto</label>
-                        <input type="text" class="form-control" name="nombre" required="">
+                        <label for="producto">Producto</label>
+                        <input type="text" class="form-control" name="producto" required="">
                     </div>
                     <div class="form-group">
                         <label for="autor">Marca</label>
-                        <input type="text" class="form-control" name="autor">
+                        <input type="text" class="form-control" name="marca">
                     </div>
                     <div class="form-group">
                         <label for="cantPaginas">Vida Util</label>
-                        <input type="number" class="form-control" name="cantPaginas" required="">
+                        <input type="number" class="form-control" name="vidaUtil" required="">
                     </div>
                     <div class="form-group">
                         <label for="precio">Valor</label>

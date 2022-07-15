@@ -54,7 +54,7 @@ public class ServletControlador extends HttpServlet{
         List <Biblioteca> libros = new LibrosDAO().findAll();
         libros.forEach(System.out::println);
         HttpSession sesion = req.getSession();
-        sesion.setAttribute("libros", libros);
+        sesion.setAttribute("producto", libros);
         sesion.setAttribute("cantidadLibros",calcularCopias(libros));
         sesion.setAttribute("precioTotal", calcularPrecio(libros));
 //        req.getRequestDispatcher("libros.jsp").forward(req, res);
@@ -62,13 +62,13 @@ public class ServletControlador extends HttpServlet{
     }
     
     private void insertarLibro(HttpServletRequest req , HttpServletResponse res) throws ServletException, IOException{
-        String nombre = req.getParameter("nombre");
-        String autor = req.getParameter("autor");
-        int cantPaginas = Integer.parseInt(req.getParameter("cantPaginas"));
+        String producto = req.getParameter("producto");
+        String marca = req.getParameter("marca");
+        int vidaUtil = Integer.parseInt(req.getParameter("vidaUtil"));
         double precio = Double.parseDouble(req.getParameter("precio"));
         int copias = Integer.parseInt(req.getParameter("copias"));
         
-        Biblioteca libro = new Biblioteca(nombre, autor, cantPaginas, precio, copias);
+        Biblioteca libro = new Biblioteca(producto, marca, vidaUtil, precio, copias);
         
         int registrosMod = new LibrosDAO().insert(libro);
         
@@ -78,9 +78,9 @@ public class ServletControlador extends HttpServlet{
     }
     
     private void eliminarLibro(HttpServletRequest req , HttpServletResponse res) throws ServletException, IOException{
-        int idlibro = Integer.parseInt(req.getParameter("idLibro"));
+        int idproducto = Integer.parseInt(req.getParameter("idproducto"));
         
-        int regMod = new LibrosDAO().deleteLibro(idlibro);
+        int regMod = new LibrosDAO().deleteLibro(idproducto);
         
         System.out.println("SE ELIMINARON: "+ regMod +" REGISTROS");
         
@@ -88,23 +88,23 @@ public class ServletControlador extends HttpServlet{
     }
     
     private void editarLibro(HttpServletRequest req , HttpServletResponse res) throws ServletException, IOException{
-        int idLibro = Integer.parseInt(req.getParameter("idlibro"));
-        Biblioteca libro = new LibrosDAO().findById(idLibro);
-        req.setAttribute("libro", libro);
+        int idproducto = Integer.parseInt(req.getParameter("idproducto"));
+        Biblioteca libro = new LibrosDAO().findById(idproducto);
+        req.setAttribute("producto", libro);
         String jspEditar = "/WEB-INF/paginas/operaciones/editar.jsp";
         req.getRequestDispatcher(jspEditar).forward(req, res);
     }
     
     private void modificarLibro(HttpServletRequest req , HttpServletResponse res)throws ServletException, IOException{
-        String nombre = req.getParameter("nombre");
-        String autor = req.getParameter("autor");
-        int cantPaginas = Integer.parseInt(req.getParameter("cantPaginas"));
+        String producto = req.getParameter("producto");
+        String marca = req.getParameter("marca");
+        int vidaUtil = Integer.parseInt(req.getParameter("vidaUtil"));
         double precio = Double.parseDouble(req.getParameter("precio"));
         int copias = Integer.parseInt(req.getParameter("copias"));
         
-        int idLibro = Integer.parseInt(req.getParameter("idLibro"));
+        int idproducto = Integer.parseInt(req.getParameter("idproducto"));
         
-        Biblioteca lib = new Biblioteca(idLibro,nombre,autor,cantPaginas,precio,copias);
+        Biblioteca lib = new Biblioteca(idproducto,producto,marca,vidaUtil,precio,copias);
         
         int regMod = new LibrosDAO().update(lib);
         

@@ -8,7 +8,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Listado de Libros</h4>
+                        <h4>Listado productos</h4>
                     </div>
                     <table class="table table-striped table-dark">
                         <thead class="thead-dark">
@@ -23,16 +23,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="libro" items="${libros}" varStatus="status">
+                            <c:forEach var="libro" items="${producto}" varStatus="status">
                                 <tr>
                                     <td>${status.count}</td>
-                                    <td>${libro.nombre}</td>
-                                    <td>${libro.autor}</td>
-                                    <td>${libro.cantPaginas}</td>
+                                    <td>${libro.producto}</td>
+                                    <td>${libro.marca}</td>
+                                    <td>${libro.vidaUtil}</td>
                                     <td><fmt:formatNumber value="${libro.precio}" type="currency"/></td>
                                     <td>${libro.copias}</td>
                                     <td>
-                                        <a href="${pageContext.request.contextPath}/servletControlador?accion=editar&idlibro=${libro.idlibro}" class="btn btn-secondary">
+                                        <a href="${pageContext.request.contextPath}/servletControlador?accion=editar&idproducto=${libro.idproducto}" class="btn btn-secondary">
                                             <i class="fas fa-angle-double-right"></i>
                                             Editar
                                         </a>

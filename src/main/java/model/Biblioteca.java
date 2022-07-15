@@ -1,60 +1,60 @@
 package model;
 
 public class Biblioteca {
-    private int idlibro;
-    private String nombre;
-    private String autor;
-    private int cantPaginas;
+    private int idproducto;
+    private String producto;
+    private String marca;
+    private int vidaUtil;
     private double precio;
     private int copias;
 
-    public Biblioteca(int idlibro, String nombre, String autor, int cantPaginas, double precio, int copias) {
-        this.idlibro = idlibro;
-        this.nombre = nombre;
-        this.autor = autor;
-        this.cantPaginas = cantPaginas;
+    public Biblioteca(int idproducto, String producto, String marca, int vidaUtil, double precio, int copias) {
+        this.idproducto = idproducto;
+        this.producto = producto;
+        this.marca = marca;
+        this.vidaUtil = vidaUtil;
         this.precio = precio;
         this.copias = copias;
     }
 
-    public Biblioteca(String nombre, String autor, int cantPaginas, double precio, int copias) {
-        this.nombre = nombre;
-        this.autor = autor;
-        this.cantPaginas = cantPaginas;
+    public Biblioteca(String producto, String marca, int vidaUtil, double precio, int copias) {
+        this.producto = producto;
+        this.marca = marca;
+        this.vidaUtil = vidaUtil;
         this.precio = precio;
         this.copias = copias;
     }
 
-    public int getIdlibro() {
-        return idlibro;
+    public int getIdproducto() {
+        return idproducto;
     }
 
-    public void setIdlibro(int idlibro) {
-        this.idlibro = idlibro;
+    public void setIdproducto(int idproducto) {
+        this.idproducto = idproducto;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getProducto() {
+        return producto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setProducto(String producto) {
+        this.producto = producto;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
-    public int getCantPaginas() {
-        return cantPaginas;
+    public int getVidaUtil() {
+        return vidaUtil;
     }
 
-    public void setCantPaginas(int cantPaginas) {
-        this.cantPaginas = cantPaginas;
+    public void setVidaUtil(int vidaUtil) {
+        this.vidaUtil = vidaUtil;
     }
 
     public double getPrecio() {
@@ -75,6 +75,6 @@ public class Biblioteca {
 
     @Override
     public String toString() {
-        return "Libro{" + "nombre=" + nombre + ", autor=" + autor + ", cantPaginas=" + cantPaginas + ", precio=" + precio + ", copias=" + copias + '}';
+        return "Libro{" + "producto=" + producto + ",  marca=" + marca + ", vidaUtil=" + vidaUtil + ", precio=" + precio + ", copias=" + copias + '}';
     }
 }

@@ -12,7 +12,7 @@
     <body>
 
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        <form action="${pageContext.request.contextPath}/servletControlador?accion=modificar&idLibro=${libro.idlibro}" method="POST" class="was-validated">
+        <form action="${pageContext.request.contextPath}/servletControlador?accion=modificar&idproducto=${libro.idproducto}" method="POST" class="was-validated">
             <jsp:include page="/WEB-INF/paginas/comunes/botonesNavEdicion.jsp"/>
 
             <section id="details">
@@ -25,16 +25,16 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="nombre">Producto</label>
-                                        <input type="text" class="form-control" name="nombre" required="" value="${libro.nombre}">
+                                        <label for="producto">Producto</label>
+                                        <input type="text" class="form-control" name="producto" required="" value="${libro.producto}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="autor">Marca</label>
-                                        <input type="text" class="form-control" name="autor" value="${libro.autor}">
+                                        <label for="marca">Marca</label>
+                                        <input type="text" class="form-control" name="marca" value="${libro.marca}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="cantPaginas">Vida Util</label>
-                                        <input type="number" class="form-control" name="cantPaginas" required="" value="${libro.cantPaginas}">
+                                        <label for="vidaUtil">Vida Util</label>
+                                        <input type="number" class="form-control" name="vidaUtil" required="" value="${libro.vidaUtil}">
                                     </div>
                                     <div class="form-group">
                                         <label for="precio">Valor</label>
