@@ -6,13 +6,13 @@ import java.util.*;
 import model.Biblioteca;
 
 public class LibrosDAO {
-    private static final String SQL_CREATE="INSERT INTO libros(nombre, autor, cantPaginas, precio, copias) VALUES(?, ?, ?, ?, ?)";
+    private static final String SQL_CREATE="INSERT INTO libros(producto, marca, vidaUtil, precio, copias) VALUES(?, ?, ?, ?, ?)";
     private static final String SQL_READ="SELECT * FROM libros";
-    private static final String SQL_READ_BY_ID= "SELECT * FROM libros WHERE idlibros= ?";
-    private static final String SQL_UPDATE_PRECIO="UPDATE libros SET precio = ? WHERE idlibros = ?";
-    private static final String SQL_UPDATE_COPIAS="UPDATE libros SET copias = ? WHERE idlibros = ?";
-    private static final String SQL_UPDATE="UPDATE libros SET nombre = ?, autor = ?, cantPaginas = ?, precio = ?,copias = ? WHERE idlibros = ?";
-    private static final String SQL_DELETE="DELETE FROM libros WHERE idlibros = ?";
+    private static final String SQL_READ_BY_ID= "SELECT * FROM libros WHERE idproducto= ?";
+    private static final String SQL_UPDATE_PRECIO="UPDATE libros SET precio = ? WHERE idproducto = ?";
+    private static final String SQL_UPDATE_COPIAS="UPDATE libros SET copias = ? WHERE idproducto = ?";
+    private static final String SQL_UPDATE="UPDATE libros SET producto= ?, marca= ?, vidaUtil= ?, precio= ?,copias= ? WHERE idproducto = ?";
+    private static final String SQL_DELETE="DELETE FROM libros WHERE idproducto = ?";
     
     
     public List<Biblioteca> findAll() {
@@ -28,14 +28,14 @@ public class LibrosDAO {
             rs = stmt.executeQuery();
             while (rs.next()) {
                 
-                int idlibros = rs.getInt(1);
-                String nombre = rs.getString(2);
-                String autor = rs.getString(3);
-                int cantPaginas = rs.getInt(4);
+                int idproducto = rs.getInt(1);
+                String producto = rs.getString(2);
+                String marca = rs.getString(3);
+                int vidaUtil = rs.getInt(4);
                 double precio = rs.getDouble(5);
                 int copias = rs.getInt(6);
 
-                libro = new Biblioteca(idlibros, nombre, autor,cantPaginas,precio,copias);
+                libro = new Biblioteca(idproducto, producto, marca,vidaUtil,precio,copias);
 
                 libros.add(libro);
             }
@@ -68,14 +68,14 @@ public class LibrosDAO {
             
             while (rs.next()) {
                 
-                int idlibros = rs.getInt(1);
-                String nombre = rs.getString(2);
-                String autor = rs.getString(3);
-                int cantPaginas = rs.getInt(4);
+                int idproducto = rs.getInt(1);
+                String producto = rs.getString(2);
+                String marca = rs.getString(3);
+                int vidaUtil = rs.getInt(4);
                 double precio = rs.getDouble(5);
                 int copias = rs.getInt(6);
 
-                libro = new Biblioteca(idlibros, nombre, autor,cantPaginas,precio,copias);
+                libro = new Biblioteca(idproducto, producto, marca,vidaUtil,precio,copias);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -100,9 +100,9 @@ public class LibrosDAO {
         try {
             conn = getConexion();
             stmt = conn.prepareStatement(SQL_CREATE);
-            stmt.setString(1, libro.getNombre());
-            stmt.setString(2, libro.getAutor());
-            stmt.setInt(3, libro.getCantPaginas());
+            stmt.setString(1, libro.getProducto());
+            stmt.setString(2, libro.getMarca());
+            stmt.setInt(3, libro.getVidaUtil());
             stmt.setDouble(4, libro.getPrecio());
             stmt.setInt(5, libro.getCopias());
             registros = stmt.executeUpdate();
@@ -128,7 +128,7 @@ public class LibrosDAO {
             conn = getConexion();
             stmt = conn.prepareStatement(SQL_UPDATE_PRECIO);
             stmt.setDouble(1, libro.getPrecio());
-            stmt.setInt(2, libro.getIdlibro());
+            stmt.setInt(2, libro.getIdproducto());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -152,7 +152,7 @@ public class LibrosDAO {
             conn = getConexion();
             stmt = conn.prepareStatement(SQL_UPDATE_COPIAS);
             stmt.setInt(1, libro.getCopias());
-            stmt.setInt(2, libro.getIdlibro());
+            stmt.setInt(2, libro.getIdproducto());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
@@ -175,12 +175,12 @@ public class LibrosDAO {
         try {
             conn = getConexion();
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setString(1, libro.getNombre());
-            stmt.setString(2, libro.getAutor());
-            stmt.setInt(3, libro.getCantPaginas());
+            stmt.setString(1, libro.getProducto());
+            stmt.setString(2, libro.getMarca());
+            stmt.setInt(3, libro.getVidaUtil());
             stmt.setDouble(4, libro.getPrecio());
             stmt.setInt(5, libro.getCopias());
-            stmt.setInt(6, libro.getIdlibro());
+            stmt.setInt(6, libro.getIdproducto());
             registros = stmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
