@@ -14,11 +14,11 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th>#</th>
-                                <th>Nombre</th>
-                                <th>Autor</th>
-                                <th>Cantidad de Paginas</th>
+                                <th>Producto</th>
+                                <th>Marca</th>
+                                <th>Vida Util(Años)</th>
                                 <th>Precio</th>
-                                <th>Copias</th>
+                                <th>Cantidad</th>
                                 <th>Accion</th>
                             </tr>
                         </thead>
@@ -46,14 +46,14 @@
             <div class="col-md-4">
                 <div class="card text-center bg-danger text-white mb-3">
                     <div class="card-body">
-                        <h3>Cantidad de libros</h3>
+                        <h3>Cantidad</h3>
                         <h4 class="display-4">${cantidadLibros}</h4>
                     </div>
                 </div>
 
                 <div class="card text-center bg-success text-white mb-3">
                     <div class="card-body">
-                        <h3>Precio Total de Libros</h3>
+                        <h3>Precio Total en Productos</h3>
                         <h4 class="display-4"><fmt:formatNumber value="${precioTotal}" type="currency"/></h4>
                     </div>
                 </div>
