@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <h1>
                     <i class="fas fa-cog"></i>
-                    Control de Stock "Purificadores"
+                    Control de Productos
                 </h1>
             </div>
         </div>

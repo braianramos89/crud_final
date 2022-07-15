@@ -7,7 +7,7 @@
                     <i class="fas fa-plus"></i> Agregar Libro 
                 </a>-->
                 <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#agregarLibroModal">
-                    <i class="fas fa-plus"></i> Agregar Libro
+                    <i class="fas fa-plus"></i> Agregar Producto
                 </button>
             </div>
         </div>

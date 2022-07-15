@@ -21,27 +21,27 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Editar Libro</h4>
+                                    <h4>Editar</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="nombre">Título</label>
+                                        <label for="nombre">Producto</label>
                                         <input type="text" class="form-control" name="nombre" required="" value="${libro.nombre}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="autor">Autor</label>
+                                        <label for="autor">Marca</label>
                                         <input type="text" class="form-control" name="autor" value="${libro.autor}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="cantPaginas">Cantidad de Páginas</label>
+                                        <label for="cantPaginas">Vida Util</label>
                                         <input type="number" class="form-control" name="cantPaginas" required="" value="${libro.cantPaginas}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="precio">Valor del Libro</label>
+                                        <label for="precio">Valor</label>
                                         <input type="currency" class="form-control" name="precio" required="" value="${libro.precio}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="copias">Cantidad de Copias</label>
+                                        <label for="copias">Cantidad</label>
                                         <input type="number" class="form-control" name="copias" required="" value="${libro.copias}">
                                     </div>
                                 </div>

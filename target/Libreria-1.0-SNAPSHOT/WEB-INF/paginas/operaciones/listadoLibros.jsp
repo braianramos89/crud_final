@@ -8,17 +8,17 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Listado de Productos</h4>
+                        <h4>Listado de Libros</h4>
                     </div>
                     <table class="table table-striped table-dark">
                         <thead class="thead-dark">
                             <tr>
                                 <th>#</th>
-                                <th>Nombre del Producto</th>
+                                <th>Producto</th>
                                 <th>Marca</th>
-                                <th>Vida Util</th>
+                                <th>Vida Util(Años)</th>
                                 <th>Precio</th>
-                                <th>cantidad</th>
+                                <th>Cantidad</th>
                                 <th>Accion</th>
                             </tr>
                         </thead>
@@ -53,7 +53,7 @@
 
                 <div class="card text-center bg-success text-white mb-3">
                     <div class="card-body">
-                        <h3>Precio Total</h3>
+                        <h3>Precio Total en Productos</h3>
                         <h4 class="display-4"><fmt:formatNumber value="${precioTotal}" type="currency"/></h4>
                     </div>
                 </div>
