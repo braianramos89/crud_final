@@ -57,7 +57,7 @@ public class ServletControlador extends HttpServlet{
         sesion.setAttribute("producto", libros);
         sesion.setAttribute("cantidadLibros",calcularCopias(libros));
         sesion.setAttribute("precioTotal", calcularPrecio(libros));
-//        req.getRequestDispatcher("libros.jsp").forward(req, res);
+        req.getRequestDispatcher("libros.jsp").forward(req, res);
         res.sendRedirect("libros.jsp");
     }
     
